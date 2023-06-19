@@ -1,3 +1,22 @@
+/* *{
+  border:1px solid darkcyan;
+} */
+body{
+  background-color: #b4d6fe;
+}
 .App {
   text-align: center;
+}
+.TodoList{
+  margin: 10px;
+}
+/* 버튼 위치 조정 */
+.css-11lq3yg-MuiGrid-root {
+
+  align-items: center;
+}
+
+/* 입력창 +버튼 크기 조정 */
+.css-jc1r49-MuiButtonBase-root-MuiButton-root {
+  height: 55px;
 }
