@@ -20,39 +20,39 @@ function Todo(props) {
 
     // App의 editItem()
     const editItem = props.editItem;
-    
+
     // 삭제
-    const DeleteEventHandler= ()=>{
+    const DeleteEventHandler = () => {
         deleteItem(item);
     }
     //읽기전용해제
-    const turnoffReadOnly = () =>{
+    const turnoffReadOnly = () => {
         setReadOnly(false);
     }
     // 읽기전용 적용
-    const turnOnReadOnly=(e)=>{
-        if(e.key === "Enter"){
+    const turnOnReadOnly = (e) => {
+        if (e.key === "Enter" && readOnly === false) {
             setReadOnly(true);
+            editItem(item);
         }
     }
     // 읽기전용 상태를 해제하여 수정한 제목이 저장
-    const editEventHandler = (e) =>{
-        item.title = e.target.value;
-        editItem();
+    const editEventHandler = (e) => {
+        setItem({ ...item, title: e.target.value })
     }
-    const checkboxEventHandler = (e) =>{
+    const checkboxEventHandler = (e) => {
         item.done = e.target.checked;
-        editItem();
+        editItem(item);
     }
-    
-    
+
+
 
     return (
         <ListItem>
             <Checkbox checked={item.done} onChange={checkboxEventHandler}></Checkbox>
             <ListItemText>
                 <InputBase
-                    inputProps={{"aria-label":"naked", readOnly : readOnly}}
+                    inputProps={{ "aria-label": "naked", readOnly: readOnly }}
                     type='text'
                     id={item.id}
                     name={item.id}
