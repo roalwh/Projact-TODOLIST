@@ -78,7 +78,7 @@ public class TodoController {
         // 변환된 TodoDTO 리스트를 이용해 ResponseDTO를 초기화한다
         ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
         // ResponseDTO를 리턴
-        return ResponseEntity.ok().body(response);
+        return ResponseEntity.ok(response);
     }
     /* post 로 json으로 값을 보낸후 생성된 값을 get으로 요청하여 리스트를 받는다. */
 
@@ -97,7 +97,7 @@ public class TodoController {
         // ResponseDTO 리스트를 이용하여 ResopnseDTO를 초기화
         ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
         // ResponseDTO 리턴
-        return ResponseEntity.ok().body(response);
+        return ResponseEntity.ok(response);
     }
 
     // 삭제
@@ -115,7 +115,7 @@ public class TodoController {
             // 변환된 TOdoDTO 리스트를 이용해 ResponseDTO를 초기화 한다
             ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
             // ResponseDTO를 리턴
-            return ResponseEntity.ok().body(response);
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             // 혹시 예외가 있는 경우 dto 대신 error에 메시지를 넣어 리턴한다
             String error = e.getMessage();

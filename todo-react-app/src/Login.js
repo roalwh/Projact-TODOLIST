@@ -8,12 +8,11 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    const username = data.get("username");
+    const email = data.get("email");
     const password = data.get("password");
-    console.log(username);
-    console.log(password);
+
     // ApiService의 signin 메서드를 사용해 로그인
-    signin({ username: username, password: password });
+    signin({ email: email, password: password });
   }
   return (
     <Container component="main" maxWidth="xs" style={{ marginTop:"8%" }} >
@@ -33,10 +32,10 @@ function Login() {
               variant="outlined"
               required
               fullWidth
-              id="username"
+              id="email"
               label="아이디"
-              name="username"
-              autoComplete="username"
+              name="email"
+              autoComplete="email"
             />
           </Grid>
           <Grid item xs={12}>

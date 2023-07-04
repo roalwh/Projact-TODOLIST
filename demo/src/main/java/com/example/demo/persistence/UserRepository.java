@@ -6,11 +6,10 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.model.UserEntity;
 
 @Repository
-public interface UserRepository  extends JpaRepository<UserEntity,String>{
+public interface UserRepository extends JpaRepository<UserEntity, String> {
 
-    // 계정 찾기
-    UserEntity findByUsername(String username);
-    Boolean existsByUsername(String username);
-    UserEntity findByUsernameAndPassword(String username,String password);
-    
+	UserEntity findByEmail(String email);
+	Boolean existsByEmail(String email);
+	UserEntity findByEmailAndPassword(String email, String password);
+
 }
