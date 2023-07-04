@@ -35,11 +35,12 @@ public class WebSecurityConfig {
                 .disable());
         http.sessionManagement((session) -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        
+        http.authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers("/", "/auth/**" , "/error").permitAll()
+                .anyRequest().authenticated());
 
-        http.authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                .requestMatchers("/", "/auth/**")
-                .permitAll().anyRequest().authenticated());
-
+        
         // http.cors().and().csrf().disable()
         // .httpBasic().disable()
         // .sessionManagement()
