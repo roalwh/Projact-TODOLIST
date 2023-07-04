@@ -20,3 +20,10 @@ body{
 .css-jc1r49-MuiButtonBase-root-MuiButton-root {
   height: 55px;
 }
+
+.css-ag7rrr-MuiTypography-root{
+  text-align: center;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  background-color: white;
+}

@@ -1,7 +1,4 @@
-import { API_BASE_URL } from "../api-config";
-
-// 설정파일에서 애플리케이션이 사용할 백엔드 URL를 동적으로 가져오도록 구현
-// 도메인이 바뀌는 경우를 대비함
+import { API_BASE_URL } from "../app-config";
 
 export function call(api, method, request) {
   let options = {
@@ -10,7 +7,7 @@ export function call(api, method, request) {
     }),
     url: API_BASE_URL + api,
     method: method,
-  }
+  };
   if (request) {
     // GET method
     options.body = JSON.stringify(request);
@@ -27,10 +24,18 @@ export function call(api, method, request) {
     )
     .catch((error) => {
       // 추가된 부분
-      console.log(error.status);
       if (error.status === 403) {
-        window.location.href = "./login"; // redirect
+        window.location.href = "/login"; // redirect
       }
       return Promise.reject(error);
     });
+}
+
+export function signin(userDTO) {
+  return call("/auth/signin", "POST", userDTO).then((response) => {
+    if (response.token) {
+      // token이 존재하는 경우 Todo 화면으로 리디렉트
+      window.location.href = "/";
+    }
+  });
 }
