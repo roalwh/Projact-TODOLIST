@@ -1,63 +1,40 @@
 
-import './App.css';
+import '../css/App.css';
 
 // material-ui 컴포넌트 
 import { Paper, List, Container } from '@mui/material';
 
 // 컴포넌트 
 import { useEffect, useState } from 'react';
-import Todo from './Components/Todo';
-import AddTodo from './Components/AddTodo';
-import {call} from "./service/ApiService";
+import Todo from '../Components/Todo';
+import AddTodo from '../Components/AddTodo';
+import { call } from "../service/ApiService";
+import NavgationBar from '../Components/NavgationBar';
+import Loading from '../Components/Loading';
 
 function App() {
+
   // 출력할 내용 설정
   const [items, setItems] = useState([]);
-
-
-  // // 한번만 동작
-  // useEffect(() => {
-  //   // 통신설정
-  // const requestOptions = {
-  //   method: "GET",
-  //   Headers: { "Content-Type": "application/json" },
-  // }
-  // fetch("http://localhost:8080/todo", requestOptions)
-  //   .then((response) => response.json())
-  //   .then(
-  //     (response) => {
-  //       setItems(response.data);
-  //     },
-  //     (error) => {
-
-  //     }
-  //   );
-  // }, [])
+  // 로딩중
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     call("/todo", "GET", null)
       .then((response) => setItems(response.data));
+    setLoading(false);
   }, [])
-
 
 
   // 기능
   // 추가
   const AddItem = (item) => {
-    // item.id = "ID-" + items.length;
-    // item.done = false;
-    // // 기존 배열 복사후 새 값 추가
-    // setItems([...items, item]);
     call("/todo", "POST", item)
       .then((response) => setItems(response.data));
   };
 
   // 삭제
   const DeleteItem = (item) => {
-    // // 삭제할 아이템을 찾는다
-    // const newItems = items.filter(e => e.id !== item.id);
-    // // 삭제할 아이템을 제외한 아이템을 다시 배열에 저장
-    // setItems([...newItems]);
     call("/todo", "DELETE", item)
       .then((response) => setItems(response.data));
   }
@@ -78,25 +55,36 @@ function App() {
         {
           //items 출력
           items.map((item) => {
-            return (
-              <Todo item={item} key={item.id} editItem={editItem} deleteItem={DeleteItem} />
-            )
+            return (<Todo item={item} key={item.id} editItem={editItem} deleteItem={DeleteItem} />)
           })
         }
       </List>
     </Paper>
   )
 
-  return (
-    <div className="App" >
+  /* 로딩중이 아닐 때 렌더링할 부분 */
+  let todoListPage = (
+    <div>
+      <NavgationBar />
       <Container maxWidth="md">
-        <AddTodo Add={AddItem}></AddTodo>
+        <AddTodo addItem={AddItem} />
         <div className="TodoList">{todoItems}</div>
       </Container>
     </div>
   );
 
+  /* 로딩중일 때 렌더링 할 부분 */
+  let loadingPage = <Loading></Loading>;
+  let content = loadingPage;
+  if (!loading) {
+    /* 로딩중이 아니면 todoListPage를 선택*/
+    content = todoListPage;
+  }
+  /* 선택한 content 렌더링 */
+  return <div className="App">{content}</div>;
 }
+
+
 
 
 export default App;

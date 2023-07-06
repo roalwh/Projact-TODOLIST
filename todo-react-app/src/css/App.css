@@ -1,0 +1,50 @@
+/* *{
+  border:1px solid darkcyan;
+} */
+body{
+  background-color: #b4d6fe;
+}
+.App {
+  text-align: center;
+}
+.TodoList{
+  margin: 10px;
+}
+/* 버튼 위치 조정 */
+.css-11lq3yg-MuiGrid-root {
+
+  align-items: center;
+}
+
+/* 입력창 +버튼 크기 조정 */
+.css-jc1r49-MuiButtonBase-root-MuiButton-root {
+  height: 55px;
+}
+
+.css-ag7rrr-MuiTypography-root{
+  text-align: center;
+}
+.Loginbox{
+  width: 500px;
+  height: 320px;
+  border: 1px solid #c9c9c9;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  box-shadow:  0px 0px 5px #444;
+  box-shadow: #c9c9c9;
+  background-color: white;
+  
+}
+.SignUpBox{
+  width: 500px;
+  height: 400px;
+  border: 1px solid #c9c9c9;
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  box-shadow:  0px 0px 5px #444;
+  box-shadow: #c9c9c9;
+  background-color: white;
+}
+

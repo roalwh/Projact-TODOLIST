@@ -11,8 +11,6 @@ function AddTodo(props) {
         setItem({ title: e.target.value });
         
     }
-
-
     const enterKeyEventHandler = (e) => {
         if (e.key === 'Enter') {
             onButtonClick();
@@ -21,7 +19,7 @@ function AddTodo(props) {
 
     // Add 함수 작성
     const onButtonClick = () => {
-        props.Add(item);
+        props.addItem(item);
         // 입력후 초기화
         setItem({ title: "" });
     }
