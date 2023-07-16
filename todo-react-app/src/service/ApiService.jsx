@@ -9,9 +9,6 @@ export function call(api, method, request) {
   // 로컬 스토리지에서 ACCESS TOKEN 가져오기
   const accessToken = localStorage.getItem("ACCESS_TOKEN");
   if (accessToken && accessToken !== null) {
-    if(accessToken===null){
-      return window.location.href = "/login";    
-    }
     headers.append("Authorization", "Bearer " + accessToken);
   }
 
@@ -67,9 +64,10 @@ export function signin(userDTO) {
 }
 // 로그아웃
 export function signout() {
-  localStorage.setItem("ACCESS_TOKEN", null);
-  window.confirm("로그아웃 하시겠습니까?");
-  window.location.href = "/login";
+  if(window.confirm("로그아웃 하시겠습니까?")){
+    localStorage.removeItem("ACCESS_TOKEN");
+    window.location.href = "/login";
+  };
 }
 // 회원가입
 export function signup(userDTO) {
