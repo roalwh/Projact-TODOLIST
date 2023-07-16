@@ -6,4 +6,4 @@ sudo /bin/chmod 775 /var/app/staging/node_modules/.bin/react-scripts
 # sudo /bin/chmod 776 /var/app/current/node_modules/.bin/react-scripts
 # # npm 시작시 ec2-user로 실행하는 듯함 -> ?? root 권한??
 # sudo usermod -G webapp -a ec2-user
-
+# sudo yum install xdg-utils
