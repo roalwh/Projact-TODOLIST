@@ -17,12 +17,13 @@ export function call(api, method, request) {
     url: API_BASE_URL + api,
     method: method,
   };
+  
 
   if (request) {
     // GET method
     options.body = JSON.stringify(request);
   }
-
+  console.log(options);
   return fetch(options.url, options)
     .then((response) => {
       if (!response.ok) {
