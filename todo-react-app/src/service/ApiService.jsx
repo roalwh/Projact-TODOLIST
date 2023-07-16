@@ -30,11 +30,9 @@ export function call(api, method, request) {
         // response.ok가 true이면 정상적인 리스폰스를 받은것, 아니면 에러 리스폰스를 받은것.
         return Promise.reject(response);
       }
-      console.log(response);
       return response.json();
     })
     .catch((error) => {
-      console.log(error);
       if (error.status === 403 || error.name === "TypeError") {
         window.location.href = "/login"; // redirect
       }
