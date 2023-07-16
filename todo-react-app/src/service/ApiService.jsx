@@ -27,6 +27,9 @@ export function call(api, method, request) {
   return fetch(options.url, options)
     .then((response) => {
       if (!response.ok) {
+        if(response.token===null){
+          return window.location.href = "/login";    
+        }
         // response.ok가 true이면 정상적인 리스폰스를 받은것, 아니면 에러 리스폰스를 받은것.
         return Promise.reject(response);
       }
@@ -51,6 +54,7 @@ export function signin(userDTO) {
       localStorage.setItem("ACCESS_TOKEN", response.token);
       alert(`로그인 성공`);
       // token이 존재하는 경우 Todo 화면으로 리디렉트
+      
       window.location.href = "/";
     }
   }).catch((error) => {
