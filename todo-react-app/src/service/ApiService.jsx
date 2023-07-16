@@ -23,7 +23,7 @@ export function call(api, method, request) {
     // GET method
     options.body = JSON.stringify(request);
   }
-  console.log(options);
+
   return fetch(options.url, options)
     .then((response) => {
       if (!response.ok) {
