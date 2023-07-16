@@ -63,6 +63,7 @@ export function signin(userDTO) {
 // 로그아웃
 export function signout() {
   localStorage.setItem("ACCESS_TOKEN", null);
+  window.confirm("로그아웃 하시겠습니까?");
   window.location.href = "/login";
 }
 // 회원가입
@@ -70,6 +71,7 @@ export function signup(userDTO) {
   return call("/auth/signup", "POST", userDTO).then((response)=>{
     if(response.ok){
       alert("회원가입 성공");
+      window.location.href = "/login";
     }
   }).catch((error)=>{
       alert("사용중인 이메일입니다.");
