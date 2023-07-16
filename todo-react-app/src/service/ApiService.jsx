@@ -9,6 +9,9 @@ export function call(api, method, request) {
   // 로컬 스토리지에서 ACCESS TOKEN 가져오기
   const accessToken = localStorage.getItem("ACCESS_TOKEN");
   if (accessToken && accessToken !== null) {
+    if(response.token===null){
+      return window.location.href = "/login";    
+    }
     headers.append("Authorization", "Bearer " + accessToken);
   }
 
@@ -27,9 +30,7 @@ export function call(api, method, request) {
   return fetch(options.url, options)
     .then((response) => {
       if (!response.ok) {
-        if(response.token===null){
-          return window.location.href = "/login";    
-        }
+        
         // response.ok가 true이면 정상적인 리스폰스를 받은것, 아니면 에러 리스폰스를 받은것.
         return Promise.reject(response);
       }
