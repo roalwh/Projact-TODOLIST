@@ -13,7 +13,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         // 모든 경로 매핑
         registry.addMapping("/**")
         // 허용주소
-            .allowedOrigins("http://localhost:3000","http://roalwhtodolistapp.ap-northeast-2.elasticbeanstalk.com/")
+            .allowedOrigins("http://localhost:3000","http://roalwhtodolistapp.ap-northeast-2.elasticbeanstalk.com")
             .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
             .allowedHeaders("*")
             .allowCredentials(true)
