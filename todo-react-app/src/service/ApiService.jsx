@@ -67,5 +67,11 @@ export function signout() {
 }
 // 회원가입
 export function signup(userDTO) {
-  return call("/auth/signup", "POST", userDTO);
+  return call("/auth/signup", "POST", userDTO).then((response)=>{
+    if(response.ok){
+      alert("회원가입 성공");
+    }
+  }).catch((error)=>{
+      alert("사용중인 이메일입니다.");
+  });
 }
