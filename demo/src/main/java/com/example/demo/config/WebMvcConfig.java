@@ -14,7 +14,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
         // 허용주소
             .allowedOrigins("http://localhost:3000","http://roalwhtodolistapp.ap-northeast-2.elasticbeanstalk.com/",
-                "http://roalwhtodolistapi.ap-northeast-2.elasticbeanstalk.com/")
+                "http://roalwhtodolistapi.ap-northeast-2.elasticbeanstalk.com/auth/signin")
             .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
             .allowedHeaders("*")
             .allowCredentials(true)
