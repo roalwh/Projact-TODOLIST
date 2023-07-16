@@ -73,5 +73,6 @@ export function signup(userDTO) {
     }
   }).catch((error)=>{
       alert("사용중인 이메일입니다.");
+      window.location.href = "/signup";
   });
 }
