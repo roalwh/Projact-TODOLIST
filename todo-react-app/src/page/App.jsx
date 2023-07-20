@@ -20,9 +20,13 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    call("/todo", "GET", null)
+    if(localStorage.getItem("ACCESS_TOKEN")){
+      call("/todo", "GET", null)
       .then((response) => setItems(response.data));
     setLoading(false);
+    }else{
+      window.location.href="/"
+    }
   }, [])
 
 

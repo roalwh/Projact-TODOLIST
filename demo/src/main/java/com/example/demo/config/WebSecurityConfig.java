@@ -42,9 +42,10 @@ public class WebSecurityConfig {
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
                 // /와 /auth/** 경로는 인증 안해도 됨.
                 http.authorizeHttpRequests((authorize) -> authorize
-                                .requestMatchers("/", "/auth/**", "/error","/todo").permitAll()
+                                .requestMatchers("/", "/auth/**", "/error","/login","/todo").permitAll()
                                 // /와 /auth/**이외의 모든 경로는 인증 해야됨.
                                 .anyRequest().authenticated());
+                
 
                 // http.cors().and().csrf().disable()
                 // .httpBasic().disable()

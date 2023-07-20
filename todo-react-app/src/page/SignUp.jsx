@@ -74,7 +74,7 @@ function SignUp() {
                     </Grid>
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <Link to="/login" variant="body2">
+                            <Link to="/" variant="body2">
                                 이미 계정이 있습니까? 로그인하세요.
                             </Link>
                         </Grid>

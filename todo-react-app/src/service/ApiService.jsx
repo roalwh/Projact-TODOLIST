@@ -27,7 +27,6 @@ export function call(api, method, request) {
   return fetch(options.url, options)
     .then((response) => {
       if (!response.ok) {
-        
         // response.ok가 true이면 정상적인 리스폰스를 받은것, 아니면 에러 리스폰스를 받은것.
         return Promise.reject(response);
       }
@@ -35,7 +34,7 @@ export function call(api, method, request) {
     })
     .catch((error) => {
       if (error.status === 403 || error.name === "TypeError") {
-        window.location.href = "/login"; // redirect
+        window.location.href = "/"; // redirect
       }
       return Promise.reject(error);
     });
@@ -53,11 +52,11 @@ export function signin(userDTO) {
       alert(`로그인 성공`);
       // token이 존재하는 경우 Todo 화면으로 리디렉트
       
-      window.location.href = "/";
+      window.location.href = "/todo";
     }
   }).catch((error) => {
     alert("로그인 실패");
-    window.location.href = "/login"; // redirect
+    window.location.href = "/"; // redirect
   });
 
 
@@ -66,7 +65,7 @@ export function signin(userDTO) {
 export function signout() {
   if(window.confirm("로그아웃 하시겠습니까?")){
     localStorage.removeItem("ACCESS_TOKEN");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 }
 // 회원가입
@@ -74,7 +73,7 @@ export function signup(userDTO) {
   return call("/auth/signup", "POST", userDTO).then((response)=>{
     if(response.ok){
       alert("회원가입 성공");
-      window.location.href = "/login";
+      window.location.href = "/";
     }
   }).catch((error)=>{
       alert("사용중인 이메일입니다.");
