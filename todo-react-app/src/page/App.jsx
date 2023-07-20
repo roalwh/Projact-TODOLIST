@@ -6,7 +6,7 @@ import { Paper, List, Container } from '@mui/material';
 
 // 컴포넌트 
 import { useEffect, useState } from 'react';
-import Todo from '../Components/Todo';
+import Todo from './Todo';
 import AddTodo from '../Components/AddTodo';
 import { call } from "../service/ApiService";
 import NavgationBar from '../Components/NavgationBar';
