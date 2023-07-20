@@ -10,6 +10,6 @@ if(hostname === "localhost"){
     backendHost = "http://localhost:8080";
 } else{
     // backendHost="http://roalwhtodolistapi.ap-northeast-2.elasticbeanstalk.com";
-    backendHost="https://roalwhtodoapi.roalwh.pe.kr/";
+    backendHost="https://roalwhtodoapi.roalwh.pe.kr";
 }
 export const API_BASE_URL = `${backendHost}`
