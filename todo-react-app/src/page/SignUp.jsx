@@ -46,7 +46,6 @@ function SignUp() {
                                 fullWidth
                                 id="username"
                                 label="아이디"
-                                autoFocus
                             />
                         </Grid>
                         <Grid item xs={12}>
