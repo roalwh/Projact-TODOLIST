@@ -54,7 +54,8 @@ annotationProcessor 'org.projectlombok:lombok'
 testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 
- 리액트
+ #리액트
+ 
 "react": "^17.0.0 || ^18.0.0",
 
 "react-dom": "^17.0.0 || ^18.0.0"
