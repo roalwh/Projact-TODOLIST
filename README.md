@@ -16,58 +16,45 @@ Oauth2 의 부분도 깃과 연동이긴하나 책의 내용으로 하기엔 이
 
 
 #사용버전
-스프링 
-	id 'org.springframework.boot' version '3.1.0'
-	id 'io.spring.dependency-management' version '1.1.0'
- 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.h2database:h2'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	// https://mvnrepository.com/artifact/com.google.guava/guava
-	implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
-	// https://mvnrepository.com/artifact/org.projectlombok/lombok
-	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
-	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
-	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
-	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
-	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
-	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
-	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
-	runtimeOnly 'mysql:mysql-connector-java'
+// https://mvnrepository.com/
 
-리액트
-{
-  "name": "todo-react-app",
-  "version": "0.1.0",
-  "private": true,
-  "engines": {
-    "node": "18.16.0"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@fontsource/roboto": "^5.0.3",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "react-router-dom": "^6.14.1",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+id 'org.springframework.boot' version '3.1.0'
+id 'io.spring.dependency-management' version '1.1.0'
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+implementation 'org.springframework.boot:spring-boot-starter-web'
+implementation 'org.springframework.boot:spring-boot-starter-security'
+implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
 
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  }
-}
- 
+compileOnly 'org.projectlombok:lombok'
+compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+
+developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+runtimeOnly 'com.h2database:h2'
+runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+runtimeOnly 'mysql:mysql-connector-java'
+
+annotationProcessor 'org.projectlombok:lombok'
+testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+ 리액트
+"react": "^17.0.0 || ^18.0.0",
+"react-dom": "^17.0.0 || ^18.0.0"
+"node": "18.16.0"
+"@emotion/react": "^11.11.1",
+"@emotion/styled": "^11.11.0",
+"@fontsource/roboto": "^5.0.3",
+"@mui/icons-material": "^5.11.16",
+"@mui/material": "^5.13.5",
+"@testing-library/jest-dom": "^5.16.5",
+"@testing-library/react": "^13.4.0",
+"@testing-library/user-event": "^13.5.0",
+"react": "^17.0.0 || ^18.0.0",
+"react-dom": "^17.0.0 || ^18.0.0",
+"react-router-dom": "^6.14.1",
+"react-scripts": "^5.0.1",
+"web-vitals": "^2.1.4"
