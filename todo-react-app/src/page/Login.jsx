@@ -35,7 +35,7 @@ function Login() {
                 required
                 fullWidth
                 id="email"
-                label="아이디"
+                label="이메일주소"
                 name="email"
                 autoComplete="email"
               />

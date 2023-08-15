@@ -13,7 +13,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         // 모든 경로 매핑
         registry.addMapping("/**")
         // 허용주소
-            .allowedOriginPatterns("http://localhost:3000","https://roalwh.pe.kr/**","http://roalwh.pe.kr/**","http://192.168.0.101/**")
+            .allowedOriginPatterns("http://localhost:3000","http://roalwh.pe.kr:20102","http://192.168.0.101:3000","http://roalwh.iptime.org:20103")
             // .allowedOriginPatterns("*")
             .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
             .allowedHeaders("*")
