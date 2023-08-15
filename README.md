@@ -1,6 +1,8 @@
 # TodoList
-스프링 부트 리액트
-https://roalwhtodoapp.roalwh.pe.kr/
+<!-- 스프링 부트 리액트
+https://roalwhtodoapp.roalwh.pe.kr/ -->
+
+프리티어도 넘쳐서 비용문제로 개인서버로..
 
 
 #책과다른 수정된부분
