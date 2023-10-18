@@ -15,9 +15,9 @@ spring:
             hibernate:
                 format_sql: true  # sql문 pretty하게 보여줌
                 use_sql_comments: true
-        generate-ddl: true   # true, false
+        generate-ddl: false   # true, false
         hibernate:
-            ddl-auto: update    # create(처음생성시,테스트), create-drop, update(db가 확정되었을 때,수정단계일때), validate, none(최종)
+            ddl-auto: none    # create(처음생성시,테스트), create-drop, update(db가 확정되었을 때,수정단계일때), validate, none(최종)
         devtools:
             livereload:
                 enabled: true
