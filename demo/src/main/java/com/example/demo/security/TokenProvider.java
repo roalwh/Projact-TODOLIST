@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-
 public class TokenProvider {
     private static final String SECRET_KEY = "5DFD5AE7874FDEE2780848A70938647D162CAB8B5DFD5AE7874FDEE2780848A70938647D162CAB8B";
     byte[] keyBytes = SECRET_KEY.getBytes();
