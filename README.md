@@ -1,6 +1,6 @@
 ## TodoList 웹 애플리케이션
 
--   Github : [Projact-TODOLIST](https://github.com/roalwh/Projact-TODOLIST%5D(https://github.com/roalwh/Projact-TODOLIST)
+-   Github : [Projact-TODOLIST](https://github.com/roalwh/Projact-TODOLIST)
 -   배포 페이지 : [TodoList 배포 페이지](http://ec2-43-202-189-205.ap-northeast-2.compute.amazonaws.com)
 
 ### 1\. 개요
